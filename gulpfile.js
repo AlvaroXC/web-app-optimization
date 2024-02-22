@@ -24,30 +24,31 @@ const paths = {
 
 function css() {
     return src(paths.scss)
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(postcss([autoprefixer(), cssnano()]))
-        // .pipe(postcss([autoprefixer()]))
-        .pipe(sourcemaps.write('.'))
+        // .pipe(postcss([autoprefixer(), cssnano()]))
+        // // .pipe(postcss([autoprefixer()]))
+        // .pipe(sourcemaps.write('.'))
         .pipe(dest('./public/build/css'));
 }
 
-function javascript() {
-    return src(paths.js)
-      .pipe(sourcemaps.init())
-      .pipe(concat('bundle.js'))
-      .pipe(terser())
-      .pipe(sourcemaps.write('.'))
-      .pipe(rename({ suffix: '.min' }))
-      .pipe(dest('./public/build/js'))
-}
+// function javascript() {
+//     return src(paths.js)
+//       .pipe(sourcemaps.init())
+//       .pipe(concat('bundle.js'))
+//       .pipe(terser())
+//       .pipe(sourcemaps.write('.'))
+//       .pipe(rename({ suffix: '.min' }))
+//       .pipe(dest('./public/build/js'))
+// }
 
 function watchArchivos() {
     watch(paths.scss, css);
-    watch(paths.js, javascript);
+    // watch(paths.js, javascript);
 }
 
 
 exports.css = css;
 exports.watchArchivos = watchArchivos;
-exports.default = parallel(css, javascript, watchArchivos); 
+exports.default = parallel(css, watchArchivos); 
+// exports.default = parallel(css, javascript, watchArchivos); 

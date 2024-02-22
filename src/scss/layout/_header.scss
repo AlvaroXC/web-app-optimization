@@ -2,11 +2,10 @@
 .header {
 
     background: $grisOscuro;
-    padding: 3rem;
+    padding: 3rem 3rem 0 3rem;
     @include grid(2, 1rem);
 
     h1 {
-        text-align: center;
         padding: 0;
         margin: 0;
         color: $blanco;
@@ -18,7 +17,19 @@
         }
     }
 
-    .logo {
-        float: left;
+    .boton-header {
+        background-color: $azul;
+        color: $blanco;
+        // font-weight: $bold;
+        text-decoration: none;
+        padding: 1rem 3rem;
+        text-align: center;
+        margin-top: 2.5rem;
+        border: none;
+
+        &:hover{
+            background-color: $azulClaro;
+            cursor: pointer;
+        }
     }
 }
