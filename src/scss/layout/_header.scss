@@ -1,0 +1,24 @@
+
+.header {
+
+    background: $grisOscuro;
+    padding: 3rem;
+    @include grid(2, 1rem);
+
+    h1 {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        color: $blanco;
+        font-size: 6rem;
+        text-align: left;
+        
+        span {
+            color: $azulClaro;
+        }
+    }
+
+    .logo {
+        float: left;
+    }
+}

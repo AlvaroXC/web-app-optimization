@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBurn</title>
+    <link rel="stylesheet" href="../public/build/css/app.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="logo">Feed<span>Burn</span></h1>
+        <form action="#">
+            <input type="button" value="Actualizar">
+            <input type="button" value="Agregar Feed">
+            <input type="text">
+        </form>
+    </header>
+    <div class="contenedor">
+        <div class="barra-buscar">
+            <form action="">
+                <input name="buscador" type="text" placeholder="Buscar Título...">
+                <input type="image" src="../public/build/img/search.png" width="50" height="50">
+            </form>
+        </div>
+        <div class="barra-filtros">
+            <!-- Filtro por categoría -->
+            <label for="categoria">Categoría:</label>
+            <select id="categoria">
+                <option value="categoria1">Categoría 1</option>
+                <option value="categoria2">Categoría 2</option>
+                <option value="categoria3">Categoría 3</option>
+            </select>
+
+            <!-- Filtro por URL -->
+            <label for="categoria">Feed:</label>
+            <select id="categoria">
+                <option value="categoria1">Feed 1</option>
+                <option value="categoria2">Feed 2</option>
+                <option value="categoria3">Feed 3</option>
+            </select>
+
+            <!-- Filtro por título -->
+            <button onclick="filtrarPorTitulo()">Filtrar por título</button>
+
+            <!-- Filtro por fecha -->
+            <button onclick="filtrarPorFecha()">Filtrar por fecha</button>
+        </div>
+        <div class="contenedor-noticia">
+            <img src="../public/build/img/ejemplo.jpeg" alt="ejemplo" type="image/jpeg" height="325" width="454">
+            <h1 class="titulo-noticia">Titulo de la noticia</h1>
+            <p class="categoria">categoria de la noticia</p>
+            <p class="fecha-notica">Fecha</p>
+        </div>
+        <div class="contenedor-noticia">
+            <img src="../public/build/img/ejemplo.jpeg" alt="ejemplo" type="image/jpeg" height="325" width="454">
+            <h1 class="titulo-noticia">Titulo de la noticia</h1>
+            <p class="categoria">categoria de la noticia</p>
+            <p class="fecha-notica">Fecha</p>
+        </div>
+        <div class="contenedor-noticia">
+            <img src="../public/build/img/ejemplo.jpeg" alt="ejemplo" type="image/jpeg" height="325" width="454">
+            <h1 class="titulo-noticia">Titulo de la noticia</h1>
+            <p class="categoria">categoria de la noticia</p>
+            <p class="fecha-notica">Fecha</p>
+        </div>
+    </div>
+</body>
+
+</html>
