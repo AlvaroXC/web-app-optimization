@@ -421,6 +421,23 @@ h4 {
   padding-left: 1rem;
 }
 
+.footer {
+  background-color: #3C434A;
+  text-align: center;
+  padding: 3rem;
+  margin-top: 3rem;
+}
+.footer h1 {
+  padding: 0;
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 6rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.footer h1 span {
+  color: #2F7B9E;
+}
+
 .contenedor {
   width: 90%;
   display: flex;
@@ -561,4 +578,59 @@ h4 {
 .gotop-container img:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.header-noticia {
+  background-color: #3C434A;
+  text-align: center;
+  padding: 2rem;
+}
+.header-noticia a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.header-noticia h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 6rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.header-noticia h1 span {
+  color: #2F7B9E;
+}
+
+.principal .titulo-noticia {
+  text-align: center;
+}
+.principal img {
+  width: 80%;
+  height: 55rem;
+}
+.principal .contenido-noticia {
+  width: 80%;
+  text-align: justify;
+  line-height: 1.8;
+}
+.principal .contenido-meta {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  width: 78%;
+}
+.principal .contenido-meta p {
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  font-family: monospace;
+  color: #0C5873;
+}
+.principal .contenido-meta .fecha {
+  text-align: right;
+}
+.principal .contenido-meta .origen {
+  text-align: center;
+}
+
+.linea {
+  width: 85%;
+  border-bottom: 0.1rem solid #2F7B9E;
 }
