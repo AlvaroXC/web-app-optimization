@@ -4,6 +4,7 @@
     background: $grisOscuro;
     padding: 3rem 3rem 0 3rem;
     @include grid(2, 1rem);
+    align-items: end;
 
     h1 {
         padding: 0;
@@ -11,25 +12,46 @@
         color: $blanco;
         font-size: 6rem;
         text-align: left;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         
         span {
             color: $azulClaro;
         }
     }
 
+    .feeds {
+        display: flex;
+        margin-bottom: 3rem;
+        // display: grid;
+        // grid-template-columns: auto auto 1fr;
+    }
+
     .boton-header {
         background-color: $azul;
         color: $blanco;
-        // font-weight: $bold;
         text-decoration: none;
-        padding: 1rem 3rem;
+        padding: 0.8rem 2rem;
         text-align: center;
-        margin-top: 2.5rem;
         border: none;
+        font-weight: $bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        flex: 0 0 auto;
+        margin-right: 10px;
+
+        transition: background-color 0.4s ease; 
 
         &:hover{
             background-color: $azulClaro;
             cursor: pointer;
+        }
+    }
+    
+    .feed-entrada {
+        flex: 1 1 auto;
+        &::-webkit-input-placeholder {
+           opacity: 0.5; 
+           padding-left: 1rem;
         }
     }
 }

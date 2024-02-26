@@ -11,61 +11,72 @@
 <body>
     <header class="header">
         <h1>Feed<span>Burn</span></h1>
-        <form action="#">
+        <form action="#" class="feeds">
             <input class="boton-header" type="button" value="Actualizar">
             <input class="boton-header" type="button" value="Agregar Feed">
-            <input type="text" placeholder="Inserte un URL...">
+            <input class="feed-entrada" type="text" placeholder="Inserte un URL...">
         </form>
     </header>
     <div class="contenedor">
-        <div class="barra-buscar">
-            <form action="">
-                <input name="buscador" type="text" placeholder="Buscar Título...">
-                <input type="image" src="../public/build/img/search.png" width="50" height="50">
+        <div class="contenedor-barra-buscar">
+            <form class="barra-buscar" action="" >
+                <input type="text" placeholder="Buscar Título..." class="texto-buscar">
+                <button type="submit" class="boton-buscar">
+                    <img src="../public/build/img/search.png"  width="30" height="30" alt="Buscar">
+                </button>
             </form>
         </div>
         <div class="barra-filtros">
+            <p>Ordenar por:</p>
             <!-- Filtro por categoría -->
-            <label for="categoria">Categoría:</label>
-            <select id="categoria">
+            <select class="select">
+                <option value="" disabled selected hidden>Categoría:</option>
                 <option value="categoria1">Categoría 1</option>
                 <option value="categoria2">Categoría 2</option>
                 <option value="categoria3">Categoría 3</option>
             </select>
-
             <!-- Filtro por URL -->
-            <label for="categoria">Feed:</label>
-            <select id="categoria">
+            <select class="select">
+                <option value="" disabled selected hidden>URL:</option>
                 <option value="categoria1">Feed 1</option>
                 <option value="categoria2">Feed 2</option>
                 <option value="categoria3">Feed 3</option>
             </select>
-
             <!-- Filtro por título -->
             <button onclick="filtrarPorTitulo()">Filtrar por título</button>
-
             <!-- Filtro por fecha -->
             <button onclick="filtrarPorFecha()">Filtrar por fecha</button>
         </div>
-        <div class="contenedor-noticia">
-            <img src="../public/build/img/ejemplo.jpeg" alt="ejemplo" type="image/jpeg" height="325" width="454">
-            <h1 class="titulo-noticia">Titulo de la noticia</h1>
-            <p class="categoria">categoria de la noticia</p>
-            <p class="fecha-notica">Fecha</p>
-        </div>
-        <div class="contenedor-noticia">
-            <img src="../public/build/img/ejemplo.jpeg" alt="ejemplo" type="image/jpeg" height="325" width="454">
-            <h1 class="titulo-noticia">Titulo de la noticia</h1>
-            <p class="categoria">categoria de la noticia</p>
-            <p class="fecha-notica">Fecha</p>
-        </div>
-        <div class="contenedor-noticia">
-            <img src="../public/build/img/ejemplo.jpeg" alt="ejemplo" type="image/jpeg" height="325" width="454">
-            <h1 class="titulo-noticia">Titulo de la noticia</h1>
-            <p class="categoria">categoria de la noticia</p>
-            <p class="fecha-notica">Fecha</p>
+        <a href="#" class="contenedor-noticia">
+            <img src="../public/build/img/ejemplo.jpeg" alt="ejemplo" type="image/jpeg">
+            <div class="info-noticia">
+                <h1 class="titulo-noticia">Hoy en TV: esta película de ciencia ficción de Marvel tenía personajes desconocidos, pero James Gunn los hizo tan exitosos como su sountrack</h1>
+                <p class="categoria">Tecnología</p>
+                <p class="fecha-noticia">Hace 3hrs</p>
+            </div>
+        </a>
+        <a href="#" class="contenedor-noticia">
+            <img src="../public/build/img/ejemplo.jpeg" alt="ejemplo" type="image/jpeg">
+            <div class="info-noticia">
+                <h1 class="titulo-noticia">Hoy en TV: esta película de ciencia ficción de Marvel tenía personajes desconocidos, pero James Gunn los hizo tan exitosos como su sountrack</h1>
+                <p class="categoria">Tecnología</p>
+                <p class="fecha-noticia">Hace 3hrs</p>
+            </div>
+        </a>
+        <a href="#" class="contenedor-noticia">
+            <img src="../public/build/img/ejemplo.jpeg" alt="ejemplo" type="image/jpeg">
+            <div class="info-noticia">
+                <h1 class="titulo-noticia">Hoy en TV: esta película de ciencia ficción de Marvel tenía personajes desconocidos, pero James Gunn los hizo tan exitosos como su sountrack</h1>
+                <p class="categoria">Tecnología</p>
+                <p class="fecha-noticia">Hace 3hrs</p>
+            </div>
+        </a>
+    </div>
+    <div class="gotop-container" >
+        <div class="gotop-btn" id="up">
+            <img src="../public/build/img/up.png" alt="arrow-up" height="100" width="100">
         </div>
     </div>
+    <script src="../public/build/js/bundle.min.js"></script>
 </body>
-
 </html>

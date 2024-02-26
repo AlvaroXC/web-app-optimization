@@ -379,6 +379,7 @@ h4 {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
+  align-items: end;
 }
 .header h1 {
   padding: 0;
@@ -386,20 +387,178 @@ h4 {
   color: #FFFFFF;
   font-size: 6rem;
   text-align: left;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 .header h1 span {
   color: #2F7B9E;
+}
+.header .feeds {
+  display: flex;
+  margin-bottom: 3rem;
 }
 .header .boton-header {
   background-color: #0C5873;
   color: #FFFFFF;
   text-decoration: none;
-  padding: 1rem 3rem;
+  padding: 0.8rem 2rem;
   text-align: center;
-  margin-top: 2.5rem;
   border: none;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto;
+  margin-right: 10px;
+  transition: background-color 0.4s ease;
 }
 .header .boton-header:hover {
   background-color: #2F7B9E;
   cursor: pointer;
+}
+.header .feed-entrada {
+  flex: 1 1 auto;
+}
+.header .feed-entrada::-webkit-input-placeholder {
+  opacity: 0.5;
+  padding-left: 1rem;
+}
+
+.contenedor {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedor-noticia {
+  display: flex;
+  margin: 1.5rem 0 0 0;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+  width: 70%;
+  transition: transform 0.5s;
+  text-decoration: none;
+  line-height: 1.15;
+}
+.contenedor-noticia:hover {
+  transform: scale(1.01);
+}
+.contenedor-noticia .titulo-noticia {
+  color: #000000;
+  font-size: 2.5rem;
+  margin: 0;
+}
+.contenedor-noticia .categoria {
+  color: #2F7B9E;
+  font-weight: 700;
+  font-family: monospace;
+}
+.contenedor-noticia .fecha-noticia {
+  text-align: end;
+  margin-right: 1rem;
+  color: #646970;
+  font-size: 1.5rem;
+}
+.contenedor-noticia img {
+  width: 50%;
+  height: auto;
+}
+.contenedor-noticia .info-noticia {
+  width: 50%;
+  height: auto;
+  padding: 2rem;
+}
+
+.barra-filtros {
+  margin: 1rem 0 3rem 0;
+  width: 70%;
+  display: flex;
+  gap: 1rem;
+}
+.barra-filtros p {
+  margin: 0;
+  color: #0C5873;
+  font-size: 1.6rem;
+  margin-right: 1rem;
+}
+.barra-filtros button {
+  border: none;
+  background-color: #FFFFFF;
+  color: #0C5873;
+}
+.barra-filtros button:hover {
+  cursor: pointer;
+  color: #2F7B9E;
+}
+.barra-filtros .select {
+  color: #0C5873;
+  border: none;
+}
+.barra-filtros .select:hover {
+  color: #2F7B9E;
+}
+
+.contenedor-barra-buscar {
+  margin: 6rem 0 1rem 0;
+  width: 100%;
+}
+.contenedor-barra-buscar .barra-buscar {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  height: 5rem;
+  border: 0.2rem solid #0C5873;
+  border-radius: 3rem;
+  margin: 0.1rem auto;
+  padding: 0 2rem;
+}
+.contenedor-barra-buscar .barra-buscar:hover {
+  border-color: #2F7B9E;
+}
+.contenedor-barra-buscar .barra-buscar:focus-within {
+  border-color: #2F7B9E;
+}
+.contenedor-barra-buscar .texto-buscar {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0.5rem 0.1rem;
+  border-radius: 3rem;
+  color: #2F7B9E;
+  font-size: 2rem;
+  font-weight: 300;
+}
+.contenedor-barra-buscar .texto-buscar::-webkit-input-placeholder {
+  color: #0C5873;
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 300;
+}
+.contenedor-barra-buscar .boton-buscar {
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 3rem;
+  height: 100%;
+  border-radius: 3rem;
+}
+
+.gotop-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+.gotop-container .oculto {
+  display: none;
+}
+.gotop-container .gotop-btn {
+  transition: opacity 0.4s ease;
+  padding: 0.5rem;
+}
+.gotop-container img {
+  transition: transform 0.2s;
+}
+.gotop-container img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
