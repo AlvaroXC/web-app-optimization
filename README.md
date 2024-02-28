@@ -8,7 +8,7 @@
         <tr>
             <td>
                 <a href="https://github.com/iapasc">
-                    <img src="Team/imgInes.jpeg" width="120px" height="140px">
+                    <img src="img/imgInes.jpeg" width="120px" height="140px">
                 </a>
             </td>
             <td>
@@ -19,7 +19,7 @@
         <tr>
             <td>
                 <a href="https://github.com/JosueCanul">
-                    <img src="Team/imgJosue.jpeg" width="120px" height="120px">
+                    <img src="img/imgJosue.jpeg" width="120px" height="120px">
                 </a>
             </td>
             <td>
@@ -30,7 +30,7 @@
         <tr>
             <td>
                 <a href="https://github.com/AlvaroXC">
-                    <img src="Team/imgAlvaro.jpg" width="120px" height="120px">
+                    <img src="img/imgAlvaro.jpg" width="120px" height="120px">
                 </a>
             </td>
             <td>
@@ -41,7 +41,7 @@
         <tr>
             <td>
                 <a href="https://github.com/KevinMed25">
-                    <img src="Team/imgKevin.jpeg" width="120px" height="140px">
+                    <img src="img/imgKevin.jpeg" width="120px" height="140px">
                 </a>
             </td>
             <td>
