@@ -79,6 +79,7 @@
             <img src="../public/build/img/up.png" alt="arrow-up" height="100" width="100">
         </div>
     </div>
+    <!-- termina el contenedor de gotop button -->
     <footer class="footer">
         <h1>Feed<span>Burn</span></h1>
     </footer>
