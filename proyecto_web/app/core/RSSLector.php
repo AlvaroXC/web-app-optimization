@@ -1,6 +1,7 @@
 <?php
 
 class RSSLector {
+    private string $pattern = '/<img[^>]*src=["\']([^"\']+)["\']/';
 
     private string $url;
     public function __construct($url) { 
@@ -21,7 +22,11 @@ class RSSLector {
     
     public function process_feed() {
         $feed = self::optain_feed();
-        $processed_feed = [];
+        $processed_feed = [
+            "title" => $feed->get_title(),
+            "url" => $feed->get_link(),
+            "news" => []
+        ];
 
         $items = $feed->get_items();
         foreach ($items as $item) {
@@ -30,11 +35,38 @@ class RSSLector {
                 "url"=> $item->get_link(),
                 "description" => htmlspecialchars(strip_tags($item->get_description())),
                 "date" => $item->get_date("Y-m-d"),
-                "img" => $item->get_thumbnail() ??"",
             ];
-            array_push($processed_feed, $nw);
+
+            //Añado las categorias de la noticia
+            $categories = $item->get_categories();
+
+            $categories_name = $this->process_categories($categories);
+            $nw["categories"] = $categories_name ?? explode("/",$item->get_link())[3] ?? [];//$categories_name; 
+
+            //Añadir la url de la imagen
+
+            preg_match($this->pattern, $item->get_content() ?? $item->get_description(), $matches);
+
+            $nw["img"] = $item->get_thumbnail()['url'] ?? isset($matches[1]) ? $matches[1] : null;
+
+            //Añado una nueva notica
+            array_push($processed_feed["news"], $nw);
+
+
         }
 
         return $processed_feed;
+    }
+
+    private function process_categories ($categories) {
+        if (isset($categories)){
+            $categories_name = [];
+            foreach($categories as $category){
+                array_push($categories_name, $category->get_term());
+            }
+            return $categories_name;
+        }else{
+            null;
+        }
     }
 }

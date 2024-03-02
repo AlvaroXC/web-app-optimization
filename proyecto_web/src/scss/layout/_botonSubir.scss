@@ -1,0 +1,26 @@
+.gotop-container{
+
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+
+    .oculto {
+        display: none;
+    }
+    
+    .gotop-btn{
+        transition: opacity 0.4s ease; 
+        padding: 0.5rem;
+    }
+
+    img {
+        transition: transform 0.2s;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+}
+
+
