@@ -4,8 +4,20 @@ class HomeController extends Controller
 {
     public function list()
     {
-        $news = News::all();
-        self::render("home", $news, "home");
+        if($_SERVER["REQUEST_METHOD"]== "GET"){
+        }
+        if ( isset($_GET["category"]) ){
+            //$news = Latest::where('categoria', '=', $_GET["category"])->get();
+        }else {
+            $news = Latest::all();
+        }
+        
+        $result_set = Capsule::select('select distinct categoria from noticia');
+        $categories = array_map(function($category) { return $category->categoria;} , $result_set);
+
+        $content = ["categories" => $categories, "news" => $news];
+        
+        self::render("home", $content, "home");
     }
 
     public function home()
@@ -17,11 +29,13 @@ class HomeController extends Controller
     {
         $rss_lector = new RSSLector("https://www.xataka.com.mx/feedburner.xml");
         $processed_feed = $rss_lector->process_feed();
-        $news = $processed_feed["news"];
 
-        foreach ($news as $new) {
-            echo json_encode($new);
-            News::Create([
+        $feed = Feed::Create(
+            ["FEED_URL" => $processed_feed["url"],"TITLE" => $processed_feed["title"]]
+        );
+
+        foreach ($processed_feed["news"] as $new) {
+            $feed->news()->create([
                 "TITLE" => $new["title"],
                 "URL" => $new["url"],
                 "DESCRIPTION" => $new["description"],
@@ -30,20 +44,24 @@ class HomeController extends Controller
                 "FECHA" => $new["date"]
             ]);
         }
+
+        exit();
         self::list();
     }
 
     public function find()
     {
-        $new = News::find($_GET["id"]);
+        $new = Latest::find($_GET["id"]);
         self::render("new", $new, "new");
     }
 
-    public function prueba() {
-        $result_set = Capsule::select('select distinct categoria from noticias');
-        print_r($result_set);
-        $categories = array_map(fn ($category) => $category["categoria"] , $result_set);
-        echo $categories;
+    public function category() {
+        $news = Latest::find($_GET["category"]);
+        self::render("new", $news, "new");
+    }
+
+    public function guardarFeed() {
+        
     }
 
 }

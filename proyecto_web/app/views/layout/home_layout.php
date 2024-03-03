@@ -13,9 +13,9 @@
         <a href="index.html">
             <h1>Feed<span>Burn</span></h1>
         </a>
-        <form action="#" class="feeds">
+        <form action="" class="feeds">
             <input class="boton-header" type="button" value="Actualizar">
-            <input class="boton-header" type="button" value="Agregar Feed">
+            <input class="boton-header" type="submit" value="Agregar Feed">
             <input class="feed-entrada" type="text" placeholder="Inserte un URL...">
         </form>
     </header>
@@ -31,12 +31,18 @@
         <div class="barra-filtros">
             <p>Ordenar por:</p>
             <!-- Filtro por categoría -->
+            <form action="" id="form-seleccion">
             <select class="select">
                 <option value="" disabled selected hidden>Categoría:</option>
-                <option value="categoria1">Categoría 1</option>
-                <option value="categoria2">Categoría 2</option>
-                <option value="categoria3">Categoría 3</option>
+
+                <?php foreach ($parametres["categories"] as $category) : ?>
+                        <option value="<?php echo $category; ?>"> <?php echo $category; ?> </a> </option>
+                <?php endforeach; ?>
+
             </select>
+            </form>
+            
+            
             <!-- Filtro por URL -->
             <select class="select">
                 <option value="" disabled selected hidden>URL:</option>

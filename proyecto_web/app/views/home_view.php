@@ -1,4 +1,4 @@
-<?php foreach ($parametres as $new) : ?>
+<?php foreach ($parametres["news"] as $new) : ?>
     <a href="Home/find?id=<?php echo $new["ID"]; ?>" class="contenedor-noticia">
         <img src="<?php echo $new["IMAGEN"]; ?>" alt="" type="">
         <div class="info-noticia">

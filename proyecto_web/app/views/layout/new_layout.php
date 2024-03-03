@@ -15,7 +15,7 @@
         </a>
     </header>
 
-    <?php echo $content; ?>
+    <?php echo $content;?>
 
     <div class="gotop-container">
         <div class="gotop-btn" id="up">

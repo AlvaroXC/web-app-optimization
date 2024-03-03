@@ -7,6 +7,6 @@ require_once(__DIR__ . "/includes/app_autoload.php");
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 require_once(__DIR__. "/includes/config/boostrap.php");
-require_once(__DIR__ . "/app/core/migrations/News.php");
+require_once(__DIR__ . "/app/core/migrations/Migration.php");
 $router = new Router();
 $router->run();
