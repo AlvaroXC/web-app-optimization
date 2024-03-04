@@ -2,12 +2,10 @@
 
 namespace Model;
 
-class News extends ActiveRecord {
+class Noticias extends ActiveRecord {
 
-    // Base DE DATOS
-    protected static $table = 'News';
-    protected static $datebaseColumns = ['id', 'titulo', 'url', 'imagen', 'descripcion', 'fecha', 'categoria'];
-
+    protected static $tabla = 'noticias';
+    protected static $columnasDB  = ['id', 'titulo', 'url', 'imagen', 'descripcion', 'fecha', 'categoria'];
 
     public $id;
     public $titulo;
@@ -17,8 +15,7 @@ class News extends ActiveRecord {
     public $fecha;
     public $categoria;
 
-    public function __construct($args = [])
-    {
+    public function __construct($args = []) {
         $this->id = $args['id'] ?? null;
         $this->titulo = $args['titulo'] ?? '';
         $this->url = $args['url'] ?? '';

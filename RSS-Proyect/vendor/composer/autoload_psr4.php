@@ -12,6 +12,8 @@ return array(
     'SimplePie\\' => array($vendorDir . '/simplepie/simplepie/src'),
     'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src/PhpOption'),
     'Model\\' => array($baseDir . '/models'),
+    'MVC\\' => array($baseDir . '/'),
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
+    'Controllers\\' => array($baseDir . '/controllers'),
 );

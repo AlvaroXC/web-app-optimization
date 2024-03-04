@@ -27,6 +27,7 @@ class ComposerStaticInit889340a28145074d190fb61bf0b7b4eb
         'M' => 
         array (
             'Model\\' => 6,
+            'MVC\\' => 4,
         ),
         'G' => 
         array (
@@ -35,6 +36,10 @@ class ComposerStaticInit889340a28145074d190fb61bf0b7b4eb
         'D' => 
         array (
             'Dotenv\\' => 7,
+        ),
+        'C' => 
+        array (
+            'Controllers\\' => 12,
         ),
     );
 
@@ -63,6 +68,10 @@ class ComposerStaticInit889340a28145074d190fb61bf0b7b4eb
         array (
             0 => __DIR__ . '/../..' . '/models',
         ),
+        'MVC\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/',
+        ),
         'GrahamCampbell\\ResultType\\' => 
         array (
             0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
@@ -70,6 +79,10 @@ class ComposerStaticInit889340a28145074d190fb61bf0b7b4eb
         'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
+        ),
+        'Controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/controllers',
         ),
     );
 
