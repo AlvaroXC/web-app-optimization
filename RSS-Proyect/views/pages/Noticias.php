@@ -38,28 +38,14 @@
         <!-- Filtro por fecha -->
         <button onclick="filtrarPorFecha()">Filtrar por fecha</button>
     </div>
-    <a href="/noticia" class="contenedor-noticia">
-        <img src="../public/build/img/ejemplo.jpeg" alt="ejemplo" type="image/jpeg">
-        <div class="info-noticia">
-            <h1 class="titulo-noticia">Hoy en TV: esta película de ciencia ficción de Marvel tenía personajes desconocidos, pero James Gunn los hizo tan exitosos como su sountrack</h1>
-            <p class="categoria">Tecnología</p>
-            <p class="fecha-noticia">Hace 3hrs</p>
-        </div>
-    </a>
-    <a href="/noticia" class="contenedor-noticia">
-        <img src="../public/build/img/ejemplo.jpeg" alt="ejemplo" type="image/jpeg">
-        <div class="info-noticia">
-            <h1 class="titulo-noticia">Hoy en TV: esta película de ciencia ficción de Marvel tenía personajes desconocidos, pero James Gunn los hizo tan exitosos como su sountrack</h1>
-            <p class="categoria">Tecnología</p>
-            <p class="fecha-noticia">Hace 3hrs</p>
-        </div>
-    </a>
-    <a href="/noticia" class="contenedor-noticia">
-        <img src="../public/build/img/ejemplo.jpeg" alt="ejemplo" type="image/jpeg">
-        <div class="info-noticia">
-            <h1 class="titulo-noticia">Hoy en TV: esta película de ciencia ficción de Marvel tenía personajes desconocidos, pero James Gunn los hizo tan exitosos como su sountrack</h1>
-            <p class="categoria">Tecnología</p>
-            <p class="fecha-noticia">Hace 3hrs</p>
-        </div>
-    </a>
+    <?php foreach ($noticias as $noticia) : ?>
+        <a class="contenedor-noticia" href="/noticia?id=<?php echo $noticia->id; ?>">
+            <img src="<?php $noticia->imagen; ?>" alt="imagen de la noticia" type="image/jpeg">
+            <div class="info-noticia">
+                <h1 class="titulo-noticia"><?php $noticia->titulo; ?></h1>
+                <p class="categoria"><?php $noticia->categoria; ?></p>
+                <p class="fecha-noticia"><?php $noticia->fecha; ?></p>
+            </div>
+        </a>
+    <?php endforeach; ?>
 </div>

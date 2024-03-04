@@ -15,10 +15,13 @@ class ControladorNoticias {
     }
 
     public static function noticia(Router $router) {
+        $id = validarRedireccionar('/Noticia');
+        $noticia = Noticias::find($id);
         $router -> render('pages/Noticia', [
-            
+            'noticia' => $noticia,
         ]);
     }
+
 }
 
 ?>

@@ -6,6 +6,16 @@ function include_template(string $nombre, bool $inicio = false){
     include TEMPLATES_URL . "/$nombre.php";
 }
 
+function validarRedireccionar(string $url) {
+    $id = $_GET['id'];
+    $id = filter_var($id, FILTER_VALIDATE_INT);
+
+    if (!$id) {
+        header("Location: {$url}");
+    }
+
+    return $id;
+}
 
 function debuguear($variable) {
     echo "<pre>";
