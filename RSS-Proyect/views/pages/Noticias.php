@@ -2,8 +2,8 @@
     <a href="index.html">
         <h1>Feed<span>Burn</span></h1>
     </a>
-    <form action="#" class="feeds" method="post">
-        <input class="boton-header" type="button" value="Actualizar">
+    <form action="/public" class="feeds" method="post">
+        <a href="/public/actualizar" id="btn-actualizar" class="boton-header">Actualizar</a>
         <input class="boton-header" type="submit" value="Agregar Feed">
         <input class="feed-entrada" type="text" name="url" placeholder="Inserte un URL...">
     </form>
@@ -39,12 +39,12 @@
         <button onclick="filtrarPorFecha()">Filtrar por fecha</button>
     </div>
     <?php foreach ($noticias as $noticia) : ?>
-        <a class="contenedor-noticia" href="/noticia?id=<?php echo $noticia->id; ?>">
-            <img src="<?php $noticia->imagen; ?>" alt="imagen de la noticia" type="image/jpeg">
+        <a class="contenedor-noticia" href="/public/noticia?id=<?php echo $noticia->id; ?>">
+            <img src="<?php echo $noticia->imagen?>" alt="imagen de la noticia" type="image/jpeg">
             <div class="info-noticia">
-                <h1 class="titulo-noticia"><?php $noticia->titulo; ?></h1>
-                <p class="categoria"><?php $noticia->categoria; ?></p>
-                <p class="fecha-noticia"><?php $noticia->fecha; ?></p>
+                <h1 class="titulo-noticia"><?php echo $noticia->titulo; ?></h1>
+                <p class="categoria"><?php echo $noticia->categoria; ?></p>
+                <p class="fecha-noticia"><?php echo $noticia->fecha; ?></p>
             </div>
         </a>
     <?php endforeach; ?>

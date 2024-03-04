@@ -15,6 +15,8 @@ $router->get('/noticia', [ControladorNoticias::class, 'noticia']);
 //Agregar feed a la bd
 $router->post('/', [ControladorFeed::class, 'crear']);
 
+$router->get('/actualizar', [ControladorFeed::class, 'actualizar']);
+
 
 // Comprueba y valida las rutas que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

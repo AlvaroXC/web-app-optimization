@@ -48,9 +48,9 @@ DROP TABLE IF EXISTS `noticias`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `noticias` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `imagen` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `titulo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `imagen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `descripcion` longtext COLLATE utf8mb4_unicode_ci,
   `fecha` date DEFAULT NULL,
   `categoria` varchar(60) COLLATE utf8mb4_unicode_ci DEFAULT NULL,

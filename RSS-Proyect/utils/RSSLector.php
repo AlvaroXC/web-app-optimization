@@ -26,8 +26,10 @@ class RSSLector {
     public function process_feed() {
         $feed = self::optain_feed();
         $processed_feed = [
-            "titulo" => $feed->get_title(),
-            "url" => $feed->get_link(),
+            "webpageinfo"=>[
+                "titulo" => $feed->get_title(),
+                "url" => $feed->get_link()
+            ],
             "news" => []
         ];
 

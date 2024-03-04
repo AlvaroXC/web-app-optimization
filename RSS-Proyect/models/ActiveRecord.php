@@ -179,4 +179,11 @@ class ActiveRecord {
         return $resultado;
     }
 
+
+    public static function deleteAll(){
+        $query = "TRUNCATE TABLE ". static::$tabla;
+        $resultado = self::$db->query($query);
+        return $resultado;
+    }
+
 }
