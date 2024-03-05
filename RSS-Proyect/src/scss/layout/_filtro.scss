@@ -1,0 +1,33 @@
+.barra-filtros {
+    margin: 1rem 0 3rem 0;
+    width: 70%;
+    display: flex;
+    gap: 1rem;
+
+    p {
+        margin: 0;
+        color: $azul;
+        font-size: 1.6rem;
+        margin-right: 1rem;
+    }
+
+    button {
+        border: none;
+        background-color: $blanco;
+        color: $azul;
+
+        &:hover{
+            cursor: pointer;
+            color: $azulClaro;
+        }
+    }
+    
+    .select{
+        color: $azul;
+        border: none;
+
+        &:hover{
+            color: $azulClaro;
+        }
+    }
+}

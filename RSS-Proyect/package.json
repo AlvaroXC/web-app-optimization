@@ -1,0 +1,28 @@
+{
+  "name": "web-app-optimization",
+  "version": "1.0.0",
+  "description": "Proyecto escolar",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "keywords": [
+    "SASS",
+    "Gulp"
+  ],
+  "author": "Team",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.71.1", 
+    "cssnano": "^5.1.0",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser-js": "^5.2.2",
+    "terser": "^4.8.0"
+  }
+}
