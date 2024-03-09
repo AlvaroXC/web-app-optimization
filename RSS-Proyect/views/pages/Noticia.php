@@ -1,5 +1,5 @@
 <header class="header-noticia">
-    <a href="/public">
+    <a href="">
         <h1>Feed<span>Burn</span></h1>
     </a>
 </header>

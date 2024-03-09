@@ -1,79 +1,146 @@
--- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: noticias_rss
--- ------------------------------------------------------
--- Server version	8.0.31
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 09-03-2024 a las 22:37:28
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `feeds`
+-- Base de datos: `rss`
 --
 
-DROP TABLE IF EXISTS `feeds`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `feeds` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(100) NOT NULL,
-  `url` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `feeds`
+-- Estructura de tabla para la tabla `categorias`
 --
 
-LOCK TABLES `feeds` WRITE;
-/*!40000 ALTER TABLE `feeds` DISABLE KEYS */;
-/*!40000 ALTER TABLE `feeds` ENABLE KEYS */;
-UNLOCK TABLES;
+CREATE TABLE `categorias` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `noticias`
+-- Estructura de tabla para la tabla `noticias`
 --
 
-DROP TABLE IF EXISTS `noticias`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `noticias` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `imagen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `descripcion` longtext COLLATE utf8mb4_unicode_ci,
-  `fecha` date DEFAULT NULL,
-  `categoria` varchar(60) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `id` int(11) NOT NULL,
+  `pagina_id` int(11) NOT NULL,
+  `titulo` varchar(256) NOT NULL,
+  `url` varchar(256) NOT NULL,
+  `imagen` varchar(256) NOT NULL,
+  `descripcion` text NOT NULL,
+  `fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `noticias`
+-- Estructura de tabla para la tabla `noticias_categorias`
 --
 
-LOCK TABLES `noticias` WRITE;
-/*!40000 ALTER TABLE `noticias` DISABLE KEYS */;
-/*!40000 ALTER TABLE `noticias` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+CREATE TABLE `noticias_categorias` (
+  `noticia_id` int(11) NOT NULL,
+  `categoria_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `paginas`
+--
+
+CREATE TABLE `paginas` (
+  `id` int(11) NOT NULL,
+  `url` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `noticias`
+--
+ALTER TABLE `noticias`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pagina_id` (`pagina_id`);
+
+--
+-- Indices de la tabla `noticias_categorias`
+--
+ALTER TABLE `noticias_categorias`
+  ADD PRIMARY KEY (`noticia_id`,`categoria_id`),
+  ADD KEY `noticia_id` (`noticia_id`),
+  ADD KEY `categoria_id` (`categoria_id`);
+
+--
+-- Indices de la tabla `paginas`
+--
+ALTER TABLE `paginas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+
+--
+-- AUTO_INCREMENT de la tabla `noticias`
+--
+ALTER TABLE `noticias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
+
+--
+-- AUTO_INCREMENT de la tabla `paginas`
+--
+ALTER TABLE `paginas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `noticias`
+--
+ALTER TABLE `noticias`
+  ADD CONSTRAINT `noticias_ibfk_1` FOREIGN KEY (`pagina_id`) REFERENCES `paginas` (`id`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `noticias_categorias`
+--
+ALTER TABLE `noticias_categorias`
+  ADD CONSTRAINT `noticias_categorias_ibfk_1` FOREIGN KEY (`noticia_id`) REFERENCES `noticias` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `noticias_categorias_ibfk_2` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`) ON DELETE CASCADE;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2024-03-03 22:35:12

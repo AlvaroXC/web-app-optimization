@@ -27,7 +27,7 @@ class RSSLector {
         $feed = self::optain_feed();
         $processed_feed = [
             "webpageinfo"=>[
-                "titulo" => $feed->get_title(),
+                //"titulo" => $feed->get_title(),
                 "url" => $feed->get_link()
             ],
             "news" => []
@@ -46,7 +46,7 @@ class RSSLector {
             $categories = $item->get_categories();
 
             $categories_name = $this->process_categories($categories);
-            $nw["categoria"] = $categories_name ?? explode("/",$item->get_link())[3] ?? [];//$categories_name; 
+            $nw["categorias"] = $categories_name ?? explode("/",$item->get_link())[3] ?? [];//$categories_name; 
 
             //Añadir la url de la imagen
 

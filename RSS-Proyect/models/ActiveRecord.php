@@ -116,8 +116,12 @@ class ActiveRecord {
         return array_shift( $resultado ) ;
     }
 
+    /**
+     * En esta sentencia decidí poner la instrucción SQL llamada TRIM que elimina espacios en blanco de los valores traidos
+     * es probable que de problema a futuro aunque haciendo chequeos vi que funciona para enteros y fechas.
+     */
     public static function where($columna, $value) {
-        $query = "SELECT * FROM " . static::$tabla  ." WHERE {$columna} = '{$value}'";
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE TRIM({$columna}) = '{$value}'";
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
     }

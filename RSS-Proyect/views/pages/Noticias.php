@@ -2,8 +2,8 @@
     <a href="index.html">
         <h1>Feed<span>Burn</span></h1>
     </a>
-    <form action="/public" class="feeds" method="post">
-        <a href="/public/actualizar" id="btn-actualizar" class="boton-header">Actualizar</a>
+    <form action="" class="feeds" method="post">
+        <a href="/actualizar" id="btn-actualizar" class="boton-header">Actualizar</a>
         <input class="boton-header" type="submit" value="Agregar Feed">
         <input class="feed-entrada" type="text" name="url" placeholder="Inserte un URL...">
     </form>
@@ -13,7 +13,7 @@
         <form class="barra-buscar" action="">
             <input type="text" placeholder="Buscar Título..." class="texto-buscar">
             <button type="submit" class="boton-buscar">
-                <img src="../public/build/img/search.png" width="30" height="30" alt="Buscar">
+                <img src="../build/img/search.png" width="30" height="30" alt="Buscar">
             </button>
         </form>
     </div>
@@ -39,7 +39,7 @@
         <button onclick="filtrarPorFecha()">Filtrar por fecha</button>
     </div>
     <?php foreach ($noticias as $noticia) : ?>
-        <a class="contenedor-noticia" href="/public/noticia?id=<?php echo $noticia->id; ?>">
+        <a class="contenedor-noticia" href="/noticia?id=<?php echo $noticia->id; ?>">
             <img src="<?php echo $noticia->imagen?>" alt="imagen de la noticia" type="image/jpeg">
             <div class="info-noticia">
                 <h1 class="titulo-noticia"><?php echo $noticia->titulo; ?></h1>

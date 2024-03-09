@@ -2,13 +2,13 @@
 
 namespace Controllers;
 
-use Model\Noticias;
+use Model\Noticia;
 use MVC\Router;
 
 class ControladorNoticias {
     
     public static function index(Router  $router) {
-        $noticias = Noticias::all();
+        $noticias = Noticia::all();
         $router -> render('pages/Noticias', [
             'noticias' => $noticias,
         ]);
@@ -16,7 +16,7 @@ class ControladorNoticias {
 
     public static function noticia(Router $router) {
         $id = validarRedireccionar('/Noticia');
-        $noticia = Noticias::find($id);
+        $noticia = Noticia::find($id);
         $router -> render('pages/Noticia', [
             'noticia' => $noticia,
         ]);
